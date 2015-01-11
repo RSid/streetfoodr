@@ -8,8 +8,9 @@ class FoodTruck
     JSON.parse(response)
   end
 
-  def initialize(foodtruck_identifier)
+  def initialize(foodtruck_identifier, city)
     @identifier = foodtruck_identifier
+    @city = city
   end
 
   def locations
@@ -21,6 +22,9 @@ class FoodTruck
     end
   end
 
-  def history
+  def history(year, month)
+    response = RestClient.get(API_ROOT_URL + "history/" + @city + "/" +
+    year + "/" + month + "/" + @identifier)
+    JSON.parse(response)
   end
 end
