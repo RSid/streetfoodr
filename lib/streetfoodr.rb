@@ -8,7 +8,11 @@ class FoodTruck
     JSON.parse(response)
   end
 
-  def locations
+  def initialize(foodtruck_identifier)
+    @identifier = foodtruck_identifier
+  end
+
+  def locations()
   end
 
   def history
