@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://data.streetfoodapp.com/1.1/history/boston/2013/11/bon-me
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Jan 2015 22:48:04 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Content-Location:
+      - bon-me.html
+      Vary:
+      - negotiate,Accept-Encoding
+      Tcn:
+      - choice
+      Accept-Ranges:
+      - bytes
+      X-Mod-Pagespeed:
+      - 1.7.30.4-3847
+      Content-Encoding:
+      - gzip
+      Cache-Control:
+      - max-age=0, no-cache
+      Content-Length:
+      - '545'
+      Content-Type:
+      - text/html
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA8WXPW/bMBCG/wrBoZMd8OvIo7e4KJAlaACnQ1F0UCGmFSCL
+        BkUZaA3/956BDCXVMYo0SNANfF6+Ot6dLvwchjYmvrvwrg1D7l66QG/8Rxy2
+        x8A3fGjoseP7OLDHwPb9FPh1w+MpDHz37cLH3KTMd1Kj1hKFEBtOC74GtDK3
+        QNO2KYwjrfKxy7/ZQ9P37Klv/jS0fN/kLk8tIYy601ZoYSgYh5+v0a2TdwLQ
+        ebxuChqgwIIGXle0fejPtKkU2CGnEPIMZ8CiVW4OROXAqhnSu3KDVsoaGcdM
+        Tn0ZunNI4223n+4Pz2zLPk95JC0svrDHmMbA7qe2yzF103Euy2vhce6DFNJI
+        410ly1qnSlnk1rJOWJS2RHpXI9/fCSMRCllGelSLOmFo+SInjJK2Rq7ghLql
+        RCELjV3YCbSmQGqhauQKTlChqGQ5KZZ1QjuFJRJ9jVzBCbpKWQZcVb4OoTnF
+        lKnMn1v2gT3/isfTSDqf+hkcJGgH//HEUHEgBTXcClnCHaxfO43zoswOpA60
+        bHagqD4DqllCruAEOlvJQr9sPzXoZdG4jBd1Qq7hhLe6kuVg2X5KBFc2Lu/1
+        +v0UBHnxrywQVql3qhjEMqKEo1i/s4KkIbWQJaE+Jw9NOjepZV/pNsM5g5Z4
+        c5y8dQ2lKpz2UCQjFc3ZpPW2yQimGu7AeLPsFAVgy18HoAP35uPK9+tf5uxD
+        Pu4MAAA=
+    http_version: 
+  recorded_at: Sun, 11 Jan 2015 22:48:05 GMT
+recorded_with: VCR 2.9.3

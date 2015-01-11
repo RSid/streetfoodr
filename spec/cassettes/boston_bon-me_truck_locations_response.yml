@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://data.streetfoodapp.com/1.1/locations/bon-me
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 11 Jan 2015 22:48:03 GMT
+      Server:
+      - Apache/2.2.22 (Ubuntu)
+      Content-Location:
+      - bon-me.html
+      Vary:
+      - negotiate,Accept-Encoding
+      Tcn:
+      - choice
+      Accept-Ranges:
+      - bytes
+      X-Mod-Pagespeed:
+      - 1.7.30.4-3847
+      Content-Encoding:
+      - gzip
+      Cache-Control:
+      - max-age=0, no-cache
+      Content-Length:
+      - '747'
+      Content-Type:
+      - text/html
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA22VSW/bMBCF/wqhQxfACbgvviVGGqONUQN2D0XRAxOxMWFa
+        MrS4cIv8944c16IiXgyRgvXxvXkz/PE383k2pURPsmDrJpsSTjQWnGPc7TS+
+        aXOXTTm9ZlxILamC7bJ4Pu9fKXKNNVVCUvhC7ut9sMdsmt26cPC5qxxaNZVz
+        TfYyeSVpRiOSNIzQMUnCG8LMmCQ145rSASmUdV3ugIMej2hxP49QLBYFZDxG
+        MakkkXSMUgx0dV+IUGXdlAVauNw/2YBmrmhcdcEZaiKcISaFE0oTSkjCQ8YE
+        4ySBW7aPwT+hB/9Y2ep4wVGKI5zikidw3DBsNB/hCIb/cKMSuG+FP7iq9s0R
+        3d2s1ugKfW2bGmqJyl9oUVa1Qzdt7puy8u2uFy/6w1DMFZOJqmKGx0fBQisz
+        yM6sY89tCGgZ7B/bK9Y4hpi0wYRgJlminoJjQgbRmQVbuSIH0RCed+i2PIaT
+        Bas+rorGGWJC6ARTcS1xp+Gty0TBmYdxndvqYKscfYef3r04qRTrU3ZGyqTC
+        lIuEgZAoSgZJnfvnzbnzEAhabxy6h0Xx28YBijuRUg19P4Jiw5lJ5AfC89bN
+        z3ZnoS+6ovligh4gIMXzK7Zs4Tjzsq1dRB80JyOpxAjFhBGJYgqBCQydGL/w
+        YQuSr6GQX3yAUQDPFxrBPG5OpbBOiBWKK0XHdQQc0VKyBO7ksG0uyMGsA6qO
+        6ypAYqquGNNUYgWXisiByKWzVfiP/YAGSzjFp8oW2+CL89bHyG0ey6dKJ9zm
+        FOaFSgRMKgVuqeFBYPS9r9HSVtsJWpVts0F3RZ9oQQblNUQnLhRBBFMicaFw
+        qaGNB8Nw5ey+rBp0Gw45lHi9KXf7upuOoe8iGTGxwkSk3IY5K3nqaoGZxdhg
+        EK02duvqPZjsui5qoItm5W4Hj1foPC1f1/24MPE9ajAEIOGz5kLwhGwl4IZV
+        g6ZaNa0F1af5tIaG6kZjJ/nnP2VpFFO5BwAA
+    http_version: 
+  recorded_at: Sun, 11 Jan 2015 22:48:04 GMT
+recorded_with: VCR 2.9.3
