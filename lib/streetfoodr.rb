@@ -14,7 +14,11 @@ class FoodTruck
 
   def locations
     response = RestClient.get(API_ROOT_URL + "locations/" + @identifier)
-    JSON.parse(response)
+    begin
+      JSON.parse(response)
+    rescue JSON::ParserError => ex
+      raise ArgumentError, "This food truck identifier does not exist"
+    end
   end
 
   def history

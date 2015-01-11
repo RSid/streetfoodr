@@ -30,4 +30,11 @@ describe "#foodtruck locations" do
 
     expect(locations.length).to be > 0
   end
+
+  it 'throws a useful error when the identifier is wrong' do
+    foodtruck = FoodTruck.new("blargle")
+
+    expect{ foodtruck.locations }
+    .to raise_error(ArgumentError, "This food truck identifier does not exist")
+  end
 end
