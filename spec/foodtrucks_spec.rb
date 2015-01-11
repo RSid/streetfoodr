@@ -47,4 +47,13 @@ describe "#foodtruck history" do
 
     expect(november_2013_history.length).to be > 0
   end
+
+  it 'throws a useful error when the information is unavailable' do
+    foodtruck = FoodTruck.new("bon-me", "boston")
+
+    expect{ foodtruck.history("2000", "11") }
+    .to raise_error(ArgumentError,
+    "Either this food truck identifier does not exist, or there is " +
+    "no history for it available during the period you have chosen.")
+  end
 end

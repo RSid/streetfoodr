@@ -25,6 +25,11 @@ class FoodTruck
   def history(year, month)
     response = RestClient.get(API_ROOT_URL + "history/" + @city + "/" +
     year + "/" + month + "/" + @identifier)
-    JSON.parse(response)
+    begin
+      JSON.parse(response)
+    rescue JSON::ParserError => ex
+      raise ArgumentError, "Either this food truck identifier does not exist," +
+      " or there is no history for it available during the period you have chosen."
+    end
   end
 end
