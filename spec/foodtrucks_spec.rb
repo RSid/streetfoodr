@@ -38,3 +38,13 @@ describe "#foodtruck locations" do
     .to raise_error(ArgumentError, "This food truck identifier does not exist")
   end
 end
+
+describe "#foodtruck history" do
+  it "gets the history of a food truck's schedule for a given month and year" do
+    foodtruck = FoodTruck.new("bon-me")
+
+    november_2013_history = foodtruck.history("2013", "11")
+
+    expect(november_2013_history.length).to be > 0
+  end
+end
