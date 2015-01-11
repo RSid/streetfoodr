@@ -21,3 +21,13 @@ describe "#foodtrucks city schedule" do
       .to raise_error(RestClient::ResourceNotFound)
   end
 end
+
+describe "#foodtruck locations" do
+  it 'gets all the locations a given food truck frequents' do
+    foodtruck = FoodTruck.new("bon-me")
+
+    locations = foodtruck.locations
+
+    expect(locations.length).to be > 0
+  end
+end

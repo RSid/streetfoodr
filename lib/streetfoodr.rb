@@ -12,7 +12,9 @@ class FoodTruck
     @identifier = foodtruck_identifier
   end
 
-  def locations()
+  def locations
+    response = RestClient.get(API_ROOT_URL + "locations/" + @identifier)
+    JSON.parse(response)
   end
 
   def history
