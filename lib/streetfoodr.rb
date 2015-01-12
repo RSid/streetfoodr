@@ -9,7 +9,7 @@ class FoodTruck
     JSON.parse(response)
   end
 
-  def self.city_truck_identifiers(city)
+  def self.get_citys_trucks_identifiers(city)
     raw_data = self.get_citys_trucks(city)
 
     identifier_name_pairs = Array.new
