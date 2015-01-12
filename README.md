@@ -28,20 +28,20 @@ locations GET url does not require a city.
 
     require 'streetfoodr'  
 
-    FoodTruck.get_city_trucks("boston")
+    Streetfoodr::FoodTruck.get_city_trucks("boston")
 
 ####Find API identifier for a given food truck
 
     require 'streetfoodr'  
 
-    FoodTruck.get_api_identifier_by_name("Stoked Wood Fired Pizza Co.", "boston")
+    Streetfoodr::FoodTruck.get_api_identifier_by_name("Stoked Wood Fired Pizza Co.", "boston")
 
 ####Find specific food truck's schedule
 
     require 'streetfoodr'  
 
     #API identifier, which is related to the name, but is usually not the same, then city
-    truck = FoodTruck.new("stoked", "boston")
+    truck = Streetfoodr::FoodTruck.new("stoked", "boston")
 
     truck.locations
 
@@ -49,7 +49,7 @@ locations GET url does not require a city.
 
     require 'streetfoodr'  
 
-    truck = FoodTruck.new("stoked", "boston")
+    truck = Streetfoodr::FoodTruck.new("stoked", "boston")
 
     #year, then number of month
     truck.history(2013, 11)

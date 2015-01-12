@@ -1,14 +1,23 @@
 require 'rest-client'
 
+##
+#This class represents food trucks
+
 module Streetfoodr
   class FoodTruck
     API_ROOT_URL = 'http://data.streetfoodapp.com/1.1/'
 
+    ##
+    #Gets all the food trucks and their schedules for a given city
     def self.get_city_trucks(city)
       response = RestClient.get(API_ROOT_URL + "schedule/" + city)
       JSON.parse(response)
     end
 
+    ##
+    #Gets the api identifier information for all the food trucks in a
+    #given city. The identifiers are necessary for getting information
+    #about a specific food truck only.
     def self.get_city_trucks_identifiers(city)
       raw_data = self.get_city_trucks(city)
 
@@ -23,6 +32,8 @@ module Streetfoodr
       return identifier_name_pairs
     end
 
+    ##
+    #Finds the api identifier of a truck by name and city.
     def self.get_api_identifier_by_name(name, city)
 
       truck_info = self.get_city_trucks_identifiers(city)
@@ -36,11 +47,15 @@ module Streetfoodr
       return truck_info
     end
 
+    ##
+    #Initializes a new instance of a specific food truck
     def initialize(foodtruck_identifier, city)
       @identifier = foodtruck_identifier
       @city = city
     end
 
+    ##
+    #Gets the locations and schedule of a given food truck
     def locations
       response = RestClient.get(API_ROOT_URL + "locations/" + @identifier)
       begin
@@ -50,6 +65,9 @@ module Streetfoodr
       end
     end
 
+    ##
+    #Gets the locations and schedule of a given food truck
+    #during a specific month and year
     def history(year, month)
       response = RestClient.get(API_ROOT_URL + "history/" + @city + "/" +
       year + "/" + month + "/" + @identifier)

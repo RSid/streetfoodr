@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'streetfoodr'
-  s.version = '0.0.0'
+  s.version = '0.0.1'
   s.date = '2015-01-11'
   s.summary = 'Streetfoodapp API'
   s.description = "Wrapped for the Street Food App API"
