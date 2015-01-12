@@ -1,4 +1,5 @@
 require 'rest-client'
+require 'pry'
 
 class FoodTruck
   API_ROOT_URL = 'http://data.streetfoodapp.com/1.1/'
@@ -6,6 +7,20 @@ class FoodTruck
   def self.city_schedule(city)
     response = RestClient.get(API_ROOT_URL + "schedule/" + city)
     JSON.parse(response)
+  end
+
+  def self.city_truck_identifiers(city)
+    raw_data = self.city_schedule(city)
+
+    identifier_name_pairs = Array.new
+
+    raw_data['vendors'].map do |truck|
+      truck_info = Hash[identifier: truck[0], name: truck[1]["name"]]
+
+      identifier_name_pairs << truck_info
+    end
+
+    return identifier_name_pairs
   end
 
   def initialize(foodtruck_identifier, city)

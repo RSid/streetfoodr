@@ -13,11 +13,13 @@ describe "#foodtrucks city schedule" do
   it 'gets all food truck data for a given city' do
     VCR.use_cassette("boston_foodtrucks_response") do
       boston_foodtrucks_data = FoodTruck.city_schedule("boston")
+
       expect(boston_foodtrucks_data.length).to be > 0
     end
 
     VCR.use_cassette("toronto_foodtrucks_response") do
       toronto_foodtrucks_data = FoodTruck.city_schedule("toronto")
+
       expect(toronto_foodtrucks_data.length).to be > 0
     end
   end
@@ -27,6 +29,19 @@ describe "#foodtrucks city schedule" do
       expect{ FoodTruck.city_schedule("thimphu") }
         .to raise_error(RestClient::ResourceNotFound)
       end
+  end
+end
+
+describe "#foodtrucks city identifiers" do
+  it 'retrievers the names and api identifiers for all trucks in a city' do
+    VCR.use_cassette("boston_foodtrucks_response") do
+      boston_foodtrucks_identifiers = FoodTruck.city_truck_identifiers("boston")
+
+      expect(boston_foodtrucks_identifiers.length).to be > 0
+      expect(boston_foodtrucks_identifiers[0]).to be_a Hash
+      expect(boston_foodtrucks_identifiers[0].keys.include?(:identifier)).to eql(true)
+      expect(boston_foodtrucks_identifiers[0].keys.include?(:name)).to eql(true)
+    end
   end
 end
 
