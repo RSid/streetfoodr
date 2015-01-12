@@ -3,13 +3,13 @@ require 'rest-client'
 class FoodTruck
   API_ROOT_URL = 'http://data.streetfoodapp.com/1.1/'
 
-  def self.get_citys_trucks(city)
+  def self.get_city_trucks(city)
     response = RestClient.get(API_ROOT_URL + "schedule/" + city)
     JSON.parse(response)
   end
 
-  def self.get_citys_trucks_identifiers(city)
-    raw_data = self.get_citys_trucks(city)
+  def self.get_city_trucks_identifiers(city)
+    raw_data = self.get_city_trucks(city)
 
     identifier_name_pairs = Array.new
 
@@ -22,10 +22,10 @@ class FoodTruck
     return identifier_name_pairs
   end
 
-  def self.get_trucks_api_identifier_by_name(name, city)
-    citys_trucks_identifiers = self.get_citys_trucks_identifiers(city)
+  def self.get_api_identifier_by_name(name, city)
 
-    truck_info = citys_trucks_identifiers.find { |truck_info| truck_info[:name] == name}
+    truck_info = self.get_city_trucks_identifiers(city)
+    .find { |truck_info| truck_info[:name] == name}
 
     if truck_info == nil
       raise ArgumentError,  "A truck with that name in that city could not be found." +

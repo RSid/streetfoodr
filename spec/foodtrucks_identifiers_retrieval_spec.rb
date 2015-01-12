@@ -12,7 +12,7 @@ end
 describe "#foodtrucks city identifiers" do
   it 'retrieves the names and api identifiers for all trucks in a city' do
     VCR.use_cassette("boston_foodtrucks_response") do
-      boston_foodtrucks_identifiers = FoodTruck.get_citys_trucks_identifiers("boston")
+      boston_foodtrucks_identifiers = FoodTruck.get_city_trucks_identifiers("boston")
 
       expect(boston_foodtrucks_identifiers.length).to be > 0
       expect(boston_foodtrucks_identifiers[0]).to be_a Hash
@@ -27,7 +27,7 @@ describe "#get_trucks_api_identifier_by_name" do
     VCR.use_cassette("boston_foodtrucks_response") do
       foodtruck_name = "Stoked Wood Fired Pizza Co."
 
-      identifier = FoodTruck.get_trucks_api_identifier_by_name(foodtruck_name,
+      identifier = FoodTruck.get_api_identifier_by_name(foodtruck_name,
       "boston")
 
       expect(identifier[:identifier]).to eql("stoked")
@@ -39,7 +39,7 @@ describe "#get_trucks_api_identifier_by_name" do
     VCR.use_cassette("boston_foodtrucks_response") do
       foodtruck_name = "Not a real food truck"
 
-      expect{ FoodTruck.get_trucks_api_identifier_by_name(foodtruck_name,
+      expect{ FoodTruck.get_api_identifier_by_name(foodtruck_name,
         "boston") }
         .to raise_error(ArgumentError, "A truck with that name in that city" +
         " could not be found. Keep in mind that the name must be exact.")
