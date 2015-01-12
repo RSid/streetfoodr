@@ -4,13 +4,13 @@ require 'pry'
 class FoodTruck
   API_ROOT_URL = 'http://data.streetfoodapp.com/1.1/'
 
-  def self.city_schedule(city)
+  def self.get_citys_trucks(city)
     response = RestClient.get(API_ROOT_URL + "schedule/" + city)
     JSON.parse(response)
   end
 
   def self.city_truck_identifiers(city)
-    raw_data = self.city_schedule(city)
+    raw_data = self.get_citys_trucks(city)
 
     identifier_name_pairs = Array.new
 
