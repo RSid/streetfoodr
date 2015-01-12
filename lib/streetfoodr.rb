@@ -1,5 +1,4 @@
 require 'rest-client'
-require 'pry'
 
 class FoodTruck
   API_ROOT_URL = 'http://data.streetfoodapp.com/1.1/'

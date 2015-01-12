@@ -41,8 +41,8 @@ describe "#get_trucks_api_identifier_by_name" do
 
       expect{ FoodTruck.get_trucks_api_identifier_by_name(foodtruck_name,
         "boston") }
-        .to raise_error(ArgumentError, "A truck with that name in that city could not be found." +
-        " Keep in mind that the name must be exact.")
+        .to raise_error(ArgumentError, "A truck with that name in that city" +
+        " could not be found. Keep in mind that the name must be exact.")
     end
   end
 end
