@@ -23,6 +23,19 @@ class FoodTruck
     return identifier_name_pairs
   end
 
+  def self.get_trucks_api_identifier_by_name(name, city)
+    citys_trucks_identifiers = self.get_citys_trucks_identifiers(city)
+
+    truck_info = citys_trucks_identifiers.find { |truck_info| truck_info[:name] == name}
+
+    if truck_info == nil
+      raise ArgumentError,  "A truck with that name in that city could not be found." +
+      " Keep in mind that the name must be exact."
+    end
+
+    return truck_info
+  end
+
   def initialize(foodtruck_identifier, city)
     @identifier = foodtruck_identifier
     @city = city
