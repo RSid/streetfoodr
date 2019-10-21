@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.homepage = 'http://rubygems.org/gems/streetfoodr'
   s.files = ["lib/streetfoodr.rb"]
   s.license = "MIT"
-  s.add_dependency 'rest-client', '~>1.7', '>=1.7.2'
+  s.add_dependency 'rest-client', '>=1.7.2', '<3.0'
   s.add_development_dependency 'pry', '~>0.10','>=0.10.1'
   s.add_development_dependency 'rspec', '~>3.1','>=3.1.0'
   s.add_development_dependency 'vcr', '~>2.9', '>=2.9.3'
